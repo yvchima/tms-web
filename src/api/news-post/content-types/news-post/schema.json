@@ -4,7 +4,8 @@
   "info": {
     "singularName": "news-post",
     "pluralName": "news",
-    "displayName": "News"
+    "displayName": "News",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,18 +18,20 @@
       "maxLength": 255
     },
     "CoverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Content": {
       "type": "richtext",
       "required": true
     },
-    "DatePublished": {
-      "type": "date",
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
       "required": true
     }
   }
