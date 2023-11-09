@@ -16,13 +16,18 @@ module.exports = createCoreController(
             where: {
               id: item.id,
             },
-            populate: ["createdBy"],
+            populate: ["createdBy", 'updatedBy'],
           });
 
           data[index].attributes.createdBy = {
             id: foundItem.createdBy.id,
             firstname: foundItem.createdBy.firstname,
             lastname: foundItem.createdBy.lastname,
+          };
+          data[index].attributes.updatedBy = {
+            id: foundItem.updatedBy.id,
+            firstname: foundItem.updatedBy.firstname,
+            lastname: foundItem.updatedBy.lastname,
           };
         })
       );
